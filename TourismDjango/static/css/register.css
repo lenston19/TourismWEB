@@ -1,0 +1,105 @@
+p, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'Proxima Nova';
+    font-style: normal;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 0; 
+    padding-left: 0;
+}
+
+.main {
+    background: #70809F;
+    padding-top: 100px;
+}
+
+.back-forma {
+    padding-bottom: 103px;
+}
+
+.forma-LogReg {
+    background: #F4F1F0;
+    border: 2px solid #F3B59C;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 15px rgba(65, 61, 59, 0.4);
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.form__title {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    color: #242424;
+}
+
+.forma {
+    width: 100%;
+    margin-top: 36px;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-style:solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #F8B195;
+    outline: none;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 37px;
+    color: #4E4D4D;
+}
+
+.forma-LogReg__button {
+    width: 423px;
+    height: 69px;
+
+    margin-top: 40px;
+
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #242424;
+
+
+    background: #F8B195;
+    box-shadow: 0px 4px 10px rgba(65, 61, 59, 0.4);
+    border-radius: 10px;
+    border-color: transparent;
+
+    outline: none;
+}
+
+.GoToLogin {
+    margin-top: 27px;
+    padding-bottom: 40px;
+}
+
+.GoToLogin__text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+
+    color: #000000;
+}
+
+.GoToLogin__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+
+    color: #6B5C7B;
+}

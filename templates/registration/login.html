@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Вход в личный кабинет</title>
+</head>
+<body>
+<main class="main">
+    <section class="back-forma">
+            <div class="container forma-LogReg">
+                <div class="row">
+                    <div class="col-lg-6 offset-md-3">
+                        <div class="form__title">
+                            Вход в личный кабинет
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% if not user.is_authenticated %}
+                        <form class="col-lg-12" action="{% if user.is_authenticated %} {% url 'lk' %} {% else %} {% url 'login' %} {% endif %}" method="post">
+                        {% csrf_token %}
+                    <div class="col-lg-6 offset-md-3">
+                        <input type="text" class="forma" name="{{ form.username.html_name }}" placeholder="Введите логин" />
+                        {{ form.username.errors }}
+                    </div>
+                    <div class="col-lg-6 offset-md-3">
+                        <input type="password" class="forma" name="{{ form.password.html_name }}" placeholder="Введите пароль"  />
+                        {{ form.password.errors }}
+                    </div>
+                    <div class="col-lg-6 offset-md-3">
+                        <button type="submit" class="forma-LogReg__button"> Войти </button>
+                    </div>
+                        </form>
+                {% endif %}
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="GoToLogin">
+                            <p class="GoToLogin__text">Нет аккаунта? <a href="{% url 'registr' %}" class="GoToLogin__link">Зарегистрируйся</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>
+</body>
+</html>

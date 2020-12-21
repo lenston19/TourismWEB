@@ -1,0 +1,109 @@
+p, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'Proxima Nova';
+    font-style: normal;
+}
+
+
+li {
+    list-style-type: none;
+   }
+ul {
+    margin-left: 0; 
+    padding-left: 0;
+}
+.header {
+    background: #6B5C7B;
+}
+
+.logo, .logout {
+    padding-top: 28px;
+    padding-bottom: 22px;
+}
+
+.user {
+    margin-top: 80px;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    color: #242424;
+}
+
+.user-email {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.email {
+    margin-right: 20px;
+}
+
+.email, .email-value{
+    display: inline-block;
+
+
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 33px;
+    color: #636161;
+}
+.email-value {
+    color: #000000;
+}
+
+.favorite-position-container {
+    margin-top: 51px;
+    margin-bottom: 180px;
+
+    background: #F4F1F0;
+    border: 3px solid #F8B195;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 15px rgba(65, 61, 59, 0.45);
+    border-radius: 10px;
+    
+}
+
+.favorite-position__title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.favorite-position__title__text {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #000000;
+}
+
+.places-row {
+    margin-top: 50px;
+    padding-bottom: 90px;
+}
+
+.places {
+    height: 350px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.places-img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.places-name {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000
+}

@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <title>Tourism</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'jpg/logo.png' %}" alt="Pleasant stay"></a>
+                </div>
+                <div class="col-lg-4 search ml-auto">
+                    <form action="{% url 'search_results' %}" method="get">
+                      <input name="q" class="search__input" type="search" placeholder="Поиск по сайту">
+                    </form>
+                </div>
+                <div class="col-lg-3 logIn">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'lk' %}"><button class="logIn__button">Личный кабинет</button></a>
+                        {% else %}
+                        <a href="{% url 'login' %}"><button class="logIn__button">Личный кабинет</button></a>
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+<main class="main">
+    <section class="Find-hotel">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-md-5">
+                    <div class="Search-hotel">
+                        <div class="Choice-hotel">
+                            <form action="" method="POST"> {% csrf_token %}
+                                <input type="text" class="Choice-hotel__city" placeholder="Куда хотите отправиться?">
+                                {{ form.start_date }}
+                                {{ form.end_date }}
+                                <input type="text" class="Choice-hotel__people-nomer" placeholder="Количество человек и номеров">
+                                <button type="submit" name = "submit" class="Choice-hotel__button">Найти жилье</button>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Visit-city">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-md-3 text-align-center">
+                    <div class="Visit-city__title">
+                        <p>Предлагаем вам посетить</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row content-city">
+                <div class="col-lg-6">
+                    <img src="{% static 'jpg/Moskou.jpg' %}" alt="Москва" class="Visit-city__image">
+                </div>
+                <div class="col-lg-6">
+                    <div class="City-info">
+                        <div class="Visit-city__text-title">
+                            <p>Москва</p>
+                        </div>
+                        <div class="Visit-city__text-price">
+                            <p>Средняя цена - 3 497р</p>
+                        </div>
+                        <div class="Visit-city__text-content">
+                            <p>
+                                Столица России, многонациональный город на Москве-реке в западной части страны. <br>
+                                В его историческом центре находится средневековая крепость Кремль – резиденция российского президента.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="City-info">
+                        <div class="Visit-city__text-title">
+                            <p>Санкт-Петербург</p>
+                        </div>
+                        <div class="Visit-city__text-price">
+                            <p>Средняя цена - 2 797р</p>
+                        </div>
+                        <div class="Visit-city__text-content">
+                            <p>
+                                Русский портовый город на побережье Балтийского моря, который в течение двух веков служил столицей Российской империи. 
+                                Он был основан в 1703 году Петром I, 
+                                которому воздвигнут знаменитый памятник "Медный всадник".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'jpg/SPB.png' %}" alt="Санкт-Петербург" class="Visit-city__image">
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'jpg/Sochi.png' %}" alt="Сочи" class="Visit-city__image">
+                </div>
+                <div class="col-lg-6">
+                    <div class="City-info">
+                        <div class="Visit-city__text-title">
+                            <p>Сочи</p>
+                        </div>
+                        <div class="Visit-city__text-price">
+                            <p>Средняя цена - 3 099р</p>
+                        </div>
+                        <div class="Visit-city__text-content">
+                            <p>
+                                Российский город на Черном море, популярный пляжный курорт. В 2014 году 
+                                здесь прошли зимние Олимпийские игры. 
+                                Одна из основных достопримечательностей 
+                                города – дендрарий, известный своими пальмами.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="City-info">
+                        <div class="Visit-city__text-title">
+                            <p>Казань</p>
+                        </div>
+                        <div class="Visit-city__text-price">
+                            <p>Средняя цена - 2 875р</p>
+                        </div>
+                        <div class="Visit-city__text-content">
+                            <p>
+                                Город на юго-западе России, расположенный на берегах Волги и Казанки. 
+                                В столице полуавтономной Республики Татарстан находится древний кремль – крепость, 
+                                известная своими музеями и святыми местами.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'jpg/kazan.png' %}" alt="Казань" class="Visit-city__image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Search-type-hotel">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-md-3 text-align-center">
+                    <div class="Search-type-hotel__title">
+                        <p>Поиск по типу размещения</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row type-hotel__content">
+                <div class="col-lg-3">
+                    <a href="{% url 'detail' %}"> <img class="Type-hotel__image" src="{% static 'jpg/Otel.png' %}" alt="Отель"> </a>
+                    <div class="Type-hotel__name">
+                        Отели
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <img class="Type-hotel__image" src="{% static 'jpg/Appartament.png' %}" alt="Аппартаменты">
+                    <div class="Type-hotel__name">
+                        Аппартаменты
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <img class="Type-hotel__image" src="{% static 'jpg/Kotedj.png' %}" alt="Коттедж">
+                    <div class="Type-hotel__name">
+                        Коттеджи
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <img class="Type-hotel__image" src="{% static 'jpg/GostDom.png' %}" alt="Гостевой дом">
+                    <div class="Type-hotel__name">
+                        Гостевые дома
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Favourite-places">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-md-3">
+                    <div class="Favourite-places__title">
+                        Наши любимые места
+                    </div>
+                </div>
+            </div>
+            <div class="row Favourite-places__content">
+                <div class="col-lg-5">
+                    <ul class="Favourite-places__list">
+                        <li class="Favourite-places__list__item">
+                            <p class="Favourite-places-city">
+                                Мармарис
+                            </p>
+                            <p class="Favourite-places-value">| 444 варианта</p>
+                        </li>
+                        <li class="Favourite-places__list__item">
+                            <p class="Favourite-places-city">
+                                Иссык-Куль
+                            </p>
+                            <p class="Favourite-places-value">| 286 варианта</p>
+                        </li>
+                        <li class="Favourite-places__list__item">
+                            <p class="Favourite-places-city">
+                                Карелия
+                            </p>
+                            <p class="Favourite-places-value">| 1 226 варианта</p>
+                        </li>
+                        <li class="Favourite-places__list__item">
+                            <p class="Favourite-places-city">
+                                Бали
+                            </p>
+                            <p class="Favourite-places-value">| 679 варианта</p>
+                        </li>
+                        <li class="Favourite-places__list__item">
+                            <p class="Favourite-places-city">
+                                Пхукет
+                            </p>
+                            <p class="Favourite-places-value">| 5 496 варианта</p>
+                        </li>
+                        <li class="Favourite-places__list__item">
+                            <p class="Favourite-places-city">
+                                Мальдивы
+                            </p>
+                            <p class="Favourite-places-value">| 808 варианта</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <img src="{% static 'jpg/veer.png' %}" alt="Веер мест">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 offset-md-2 footer__first">
+                Политика конфиденциальности | Условия эксплуатации | Техническая поддержка
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-md-3 footer__second">
+                Copyright © 2020 PleasantStay.com™. Все права защищены.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+$(document).ready(function() {
+    $('.datepicker').datepicker();
+});
+</script>
+
+</body>
+</html>
