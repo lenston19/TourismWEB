@@ -96,7 +96,8 @@ ul {
 
 .places-img {
     border-radius: 10px;
-    width: 100%;
+    width: 345px;
+    height: 220px;
 }
 
 .places-name {

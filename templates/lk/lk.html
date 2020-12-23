@@ -49,35 +49,19 @@
                 <div class="row">
                     <div class="col-lg-8 offset-md-2 favorite-position__title">
                         <p class="favorite-position__title__text">
-                            Места, которые вы добавили в избранное
+                            Места, которые вы недавно искали
                         </p>
                     </div>
                 </div>
                 <div class="row places-row">
-                    <div class="col-lg-4 offset-md-2">
+                    {% for hotel in object_list %}
+                        <div class="col-lg-4">
                         <div class="places">
-                            <img src="{% static 'jpg/places1.png' %}" alt="" class="places-img">
-                            <p class="places-name">Marins Park Hotel Sochi</p>
+                            <img src="{% if hotel.HotelImg %}{{ hotel.HotelImg.url }}{% else %}{% static 'jpg/hotelimg.png' %}{% endif %}" alt="" class="places-img">
+                            <p class="places-name">{{ hotel.HotelName }}</p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="places">
-                            <img src="{% static 'jpg/places1.png' %}" alt="" class="places-img">
-                            <p class="places-name">Marins Park Hotel Sochi</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-md-2">
-                        <div class="places">
-                            <img src="{% static 'jpg/places1.png' %}" alt="" class="places-img">
-                            <p class="places-name">Marins Park Hotel Sochi</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="places">
-                            <img src="{% static 'jpg/places1.png' %}" alt="" class="places-img">
-                            <p class="places-name">Marins Park Hotel Sochi</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="row">
                     <div class="col-lg-3 offset-md-4">
