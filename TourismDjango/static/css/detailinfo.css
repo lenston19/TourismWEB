@@ -95,6 +95,7 @@ ul {
   width: 210px;
   height: 210px;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .detail-content__title {
