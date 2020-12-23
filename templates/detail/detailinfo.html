@@ -43,7 +43,7 @@
             <div class="row detail-content">
               <div class="col-lg-6">
                 <img
-                  src="{% static 'jpg/hotelimg.png' %}"
+                  src="{% if hotel.HotelImg %}{{ hotel.HotelImg.url }}{% else %}{% static 'jpg/hotelimg.png' %}{% endif %}"
                   alt
                   class="detail-content__img mt-2"
                 />

@@ -92,7 +92,9 @@ ul {
 }
 
 .detail-content__img {
-  width: 100%;
+  width: 210px;
+  height: 210px;
+  margin-bottom: 10px;
 }
 
 .detail-content__title {
